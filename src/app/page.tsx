@@ -1,69 +1,27 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Check, Heart, LockKeyhole, NotebookPen, ShieldCheck, Sparkles } from "lucide-react";
+import { Brand } from "@/components/brand";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="landing min-h-screen overflow-hidden bg-[#f8faf7] text-[#193b39]">
+      <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-7 lg:px-10">
+        <Brand />
+        <Link href="/auth" className="hidden items-center gap-2 rounded-full border border-[#d7e4df] bg-white px-5 py-2.5 text-sm font-semibold text-[#24534d] shadow-sm transition hover:border-[#8cb6a8] hover:bg-[#f3f8f5] sm:inline-flex">Zaloguj się / Zarejestruj <ArrowRight size={16} /></Link>
+      </header>
+      <main>
+        <section className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 pb-20 pt-14 lg:min-h-[690px] lg:grid-cols-[1.04fr_.96fr] lg:px-10 lg:pb-28 lg:pt-20">
+          <div className="relative z-10 max-w-2xl">
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#d5e8de] bg-[#eaf5ee] px-4 py-2 text-xs font-bold tracking-[.13em] text-[#347262] uppercase"><Sparkles size={14} /> Spokojna przestrzeń dla Twoich myśli</div>
+            <h1 className="font-display text-[clamp(3.4rem,6.7vw,6.5rem)] leading-[1.04] tracking-[-.055em] text-[#173f3b]">Zatrzymaj się.<br /><span className="text-[#75a894]">Zauważ.</span><br />Zrozum siebie.</h1>
+            <p className="mt-8 max-w-xl text-lg leading-8 text-[#5e7772]">Twój Pomocnik w Terapii pomaga uporządkować sytuacje, myśli i emocje. Zapisuj to, co ważne, i wracaj do swoich obserwacji we własnym tempie.</p>
+            <div className="mt-10 flex flex-wrap items-center gap-5"><Link href="/auth" className="inline-flex items-center gap-3 rounded-full bg-[#286a5d] px-7 py-4 text-sm font-bold text-white shadow-[0_12px_28px_rgba(35,104,89,.22)] transition hover:-translate-y-0.5 hover:bg-[#1d594e]">Zacznij prowadzić dziennik <ArrowRight size={18} /></Link><span className="inline-flex items-center gap-2 text-sm text-[#68827a]"><LockKeyhole size={15} /> Tylko Ty masz dostęp do swoich wpisów</span></div>
+            <div className="mt-16 flex items-center gap-4 border-t border-[#dfe9e3] pt-6 text-sm text-[#698079]"><div className="flex -space-x-2"><span className="h-9 w-9 rounded-full border-[3px] border-[#f8faf7] bg-[#d9e9dd]" /><span className="h-9 w-9 rounded-full border-[3px] border-[#f8faf7] bg-[#b9d5c8]" /><span className="h-9 w-9 rounded-full border-[3px] border-[#f8faf7] bg-[#e9dccc]" /></div><span>Małe kroki. Większa świadomość.</span></div>
+          </div>
+          <div className="relative mx-auto w-full max-w-[580px] lg:mr-0"><div className="absolute -right-36 -top-20 h-[540px] w-[540px] rounded-full bg-[#dcece1]/65 blur-3xl" /><div className="absolute -bottom-14 -left-12 h-72 w-72 rounded-full bg-[#e8e9d7]/70 blur-3xl" /><div className="relative rotate-[3deg] rounded-[36px] border border-white/75 bg-[#dce9df] p-5 shadow-[0_30px_80px_rgba(40,76,64,.14)] sm:p-8"><div className="absolute -right-5 top-16 z-10 rounded-2xl border border-white bg-white px-4 py-3 shadow-lg sm:-right-7"><div className="flex items-center gap-2 text-xs font-semibold text-[#39745d]"><span className="grid h-7 w-7 place-items-center rounded-full bg-[#e5f4e9]"><Check size={15} /></span> Chwila dla siebie</div></div><div className="rotate-[-3deg] rounded-[25px] bg-white p-6 shadow-[0_14px_38px_rgba(38,84,70,.08)] sm:p-9"><div className="mb-8 flex items-center justify-between border-b border-[#edf1ed] pb-6"><div className="flex items-center gap-3"><span className="grid h-11 w-11 place-items-center rounded-xl bg-[#ecf5ef] text-[#468470]"><NotebookPen size={21} /></span><div><p className="text-sm font-bold text-[#244c43]">Dziennik myśli CBT</p><p className="text-xs text-[#92a59e]">Twoja prywatna przestrzeń</p></div></div><span className="rounded-full bg-[#f2f7f2] px-3 py-1 text-[11px] font-semibold text-[#7d9b88]">Nowy wpis</span></div><p className="mb-3 text-xs font-bold tracking-[.14em] text-[#7eaaa0] uppercase">01 / Sytuacja</p><div className="mb-6 rounded-xl border border-[#e4ebe6] bg-[#fbfdfb] px-4 py-4 text-sm leading-6 text-[#607a70]">Co się wydarzyło? Gdzie byłem/am? Kto był ze mną?</div><p className="mb-3 text-xs font-bold tracking-[.14em] text-[#7eaaa0] uppercase">02 / Pierwsza myśl</p><div className="mb-6 h-14 rounded-xl border border-[#e4ebe6] bg-[#fbfdfb]" /><p className="mb-3 text-xs font-bold tracking-[.14em] text-[#7eaaa0] uppercase">03 / Emocje</p><div className="flex items-center justify-between rounded-xl bg-[#eff6f0] px-4 py-4 text-sm font-medium text-[#527465]"><span>Jak się teraz czuję?</span><span className="rounded-full bg-white px-3 py-1 text-xs text-[#5c8d76]">0–100%</span></div><div className="mt-7 flex items-center justify-between"><span className="text-xs text-[#9aad9f]">Zapisz, kiedy będziesz gotowy/a</span><span className="rounded-full bg-[#2d6b5b] px-5 py-2.5 text-xs font-bold text-white">Zapisz wpis →</span></div></div></div><div className="absolute -bottom-8 -left-5 flex rotate-[-8deg] items-center gap-3 rounded-2xl border border-white bg-white px-5 py-4 shadow-[0_14px_38px_rgba(34,70,55,.13)] sm:-left-12"><span className="grid h-10 w-10 place-items-center rounded-full bg-[#f5e9dc] text-[#b98e68]"><Heart size={18} /></span><div><p className="text-xs font-bold text-[#31594c]">Twoje tempo</p><p className="text-[11px] text-[#90a49a]">Bez presji i oceniania</p></div></div></div>
+        </section>
+        <section className="border-t border-[#e4ebe5] bg-white/70 px-6 py-20 lg:px-10"><div className="mx-auto max-w-7xl"><div className="mb-10 max-w-xl"><p className="mb-3 text-xs font-bold tracking-[.18em] text-[#69a58e] uppercase">Jak to działa</p><h2 className="font-display text-4xl leading-tight text-[#234a42] sm:text-5xl">Miejsce na to, co czujesz.</h2><p className="mt-4 text-[#6b8177]">Proste narzędzie do pracy między sesjami terapeutycznymi.</p></div><div className="grid gap-5 md:grid-cols-3">{[{ icon: NotebookPen, number: "01", title: "Zapisz sytuację", text: "Opisz wydarzenie oraz pierwszą myśl, która przyszła Ci do głowy." },{ icon: Heart, number: "02", title: "Nazwij emocje", text: "Zauważ reakcje ciała i określ siłę swoich emocji w skali 0–100%." },{ icon: ShieldCheck, number: "03", title: "Spójrz z dystansu", text: "Rozpoznaj wzorce myślenia i zabierz swoje notatki na sesję." }].map(({ icon: Icon, number, title, text }) => <div key={number} className="rounded-[24px] border border-[#e2ebe4] bg-white p-7 shadow-[0_8px_26px_rgba(40,69,54,.035)]"><div className="mb-8 flex items-center justify-between"><span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#edf6ef] text-[#4e8e73]"><Icon size={22} /></span><span className="font-display text-2xl text-[#c8dbcd]">{number}</span></div><h3 className="mb-3 text-lg font-bold text-[#244d42]">{title}</h3><p className="text-sm leading-6 text-[#72867c]">{text}</p></div>)}</div></div></section>
+      </main><footer className="border-t border-[#e4ebe5] px-6 py-7 text-center text-xs text-[#82968c]">Twój Pomocnik w Terapii · Narzędzie wspierające pracę własną, nie zastępuje terapii ani pomocy w sytuacji kryzysowej.</footer>
     </div>
   );
 }
