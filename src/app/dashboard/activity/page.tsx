@@ -174,7 +174,7 @@ export default function ActivityPage() {
           <Link href="/dashboard" className="flex items-center gap-3 rounded-xl px-4 py-3.5 text-sm text-[#d0e2d7] transition hover:bg-white/10"><BookOpenText size={19} /> Dziennik Myśli CBT</Link>
           <Link href="/dashboard/activity" aria-current="page" className="flex items-center gap-3 rounded-xl bg-white/15 px-4 py-3.5 text-sm font-semibold text-white"><Activity size={19} /> Dziennik aktywności <ChevronRight className="ml-auto" size={16} /></Link>
           <button type="button" disabled className="flex w-full items-center gap-3 rounded-xl px-4 py-3.5 text-left text-sm text-[#b9d0c5] opacity-70"><Heart size={19} /> Mapa emocji <span className="ml-auto text-[10px]">WKRÓTCE</span></button>
-          <button type="button" disabled className="flex w-full items-center gap-3 rounded-xl px-4 py-3.5 text-left text-sm text-[#b9d0c5] opacity-70"><Sparkles size={19} /> Ćwiczenia <span className="ml-auto text-[10px]">WKRÓTCE</span></button>
+          <Link href="/dashboard/exercises" className="flex items-center gap-3 rounded-xl px-4 py-3.5 text-sm text-[#d0e2d7] transition hover:bg-white/10"><Sparkles size={19} /> Ćwiczenia</Link>
         </nav>
         <div className="mt-auto rounded-2xl border border-white/10 bg-white/8 p-5"><span className="mb-3 grid h-9 w-9 place-items-center rounded-xl bg-white/15"><CircleHelp size={19} /></span><p className="text-sm font-semibold">Zauważ swój rytm dnia.</p><p className="mt-2 text-xs leading-5 text-[#b9d5c6]">Zapisuj aktywności i samopoczucie bez oceniania siebie.</p></div>
       </aside>
